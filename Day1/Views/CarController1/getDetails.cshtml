@@ -1,0 +1,15 @@
+﻿@model Data;
+
+@{
+    var car = Model.car;
+  
+}
+
+<div>
+    <p>Manufacturer : @car.Manufacturer</p>
+    <p>Model : @car.Model</p>
+    <p>Image src : @car.Image</p>
+    <p> HTml Description :@Html.Raw(car.HtmlDescription)</p>
+    <p>FirstUseDate : @car.FirstUseDate</p>
+    <p>Data From : @Model.Status</p>
+</div>

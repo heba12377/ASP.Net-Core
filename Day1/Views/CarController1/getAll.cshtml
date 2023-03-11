@@ -1,0 +1,69 @@
+﻿@model List<Car>;
+
+@{
+    var cars = Model;
+}
+
+@{
+    void RenderTableBody()
+    {
+        <tr>
+            <th>Name</th>
+            <th>Usage duration (year) </th>
+            <th>HtmlDescription</th>
+            <th>Image</th>
+            <th>Details</th>
+        </tr>
+        @for (int i = 0; i < cars.Count; i++)
+        {
+            <tr>
+                <td>@($"{cars[i].Model} from {cars[i].Manufacturer}")</td>
+                <td>@(DateTime.Now.Year - cars[i].FirstUseDate.Year)</td>
+                <td>@Html.Raw(cars[i].HtmlDescription)</td>
+                <td>
+                    <figure class="figure">
+                        <img src="@(cars[i].Image)" class="figure-img img-fluid rounded" alt="@($"{cars[i].Model} from {cars[i].Manufacturer}")">
+                        <figcaption class="figure-caption">@($"{cars[i].Model} from {cars[i].Manufacturer}")</figcaption>
+                    </figure>
+                </td>
+                <td><a href="/carcontroller1/getdetails?man=@cars[i].Manufacturer&from=Table">Details</a></td>
+                
+            </tr>
+        }
+    }
+
+}
+<h2> Data from Table</h2>
+<table class = "table">
+    @{
+        RenderTableBody();
+    }
+</table>
+
+
+<br />
+<br />
+
+<h2> Data from list</h2>
+<ol>
+     @for (int i = 0; i < cars.Count; i++)
+        {
+        <li>
+            <ul>
+                <li>Name :@($"{cars[i].Model} from {cars[i].Manufacturer}")</li>
+                <li>Usage duration (year): @(DateTime.Now.Year - cars[i].FirstUseDate.Year) </li>
+                <li>HtmlDescription: @Html.Raw(cars[i].HtmlDescription)</li>
+                <li>
+                    Image :
+                    <figure class="figure">
+                        <img src="@(cars[i].Image)" class="figure-img img-fluid rounded" alt="@($"{cars[i].Model} from {cars[i].Manufacturer}")">
+                        <figcaption class="figure-caption">@($"{cars[i].Model} from {cars[i].Manufacturer}")</figcaption>
+                    </figure>
+                </li>
+                <li>Details: <a href="/carcontroller1/getdetails?man=@cars[i].Manufacturer&from=List">Details</a></li>
+            </ul>
+            <br>
+         </li>
+     }
+    
+</ol>
