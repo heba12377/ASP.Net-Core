@@ -1,0 +1,27 @@
+﻿@using Day2.Models.Domian;
+@model Ticket;
+<form asp-action="Add" method="post">
+
+    <div class="form-group">
+        <label asp-for="CreatedDate"></label>
+        <input class="form-control" asp-for="CreatedDate" />
+    </div>
+    <br />
+    <div class="form-group">
+        <label asp-for="Description"></label>
+        <input class="form-control" asp-for="Description" />
+    </div>
+     <br />
+    <div class="form-group">
+        <label asp-for="_Severity"></label>
+        <select asp-for="_Severity" asp-items="Html.GetEnumSelectList<Severity>()"></select>
+    </div>
+    <br />
+    <div class="form-group">
+        <input class="" asp-for="IsClosed" name="IsClosed" value=""/>
+        <label asp-for="IsClosed"></label>
+    </div>
+    <br />
+    <button class="btn btn-secondary"> Submit </button>
+
+</form>

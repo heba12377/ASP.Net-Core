@@ -1,0 +1,19 @@
+﻿@using Day2.Models.Domian;
+@model List<Ticket>;
+
+<a asp-action="Add">Add a new item</a>
+
+<div class="container">
+    @foreach (var item in Model)
+    {
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">@item.CreatedDate</h5>
+                <h6 class="card-subtitle mb-2 text-muted">@item.Description</h6>
+                <h6 class="card-subtitle mb-2 text-muted">@item.IsClosed</h6>
+                <h6 class="card-subtitle mb-2 text-muted">@item._Severity</h6>
+            </div>
+        </div>
+    }
+</div>
+
