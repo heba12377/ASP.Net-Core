@@ -1,0 +1,26 @@
+﻿@using Day3.Models.Domain;
+@model List<Ticket>;
+
+<a asp-action="Add">Add a new item</a>
+
+<div class="container">
+    @foreach (var item in Model)
+    {
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">@item.Id</h5>
+                <h6 class="card-title">@item.Description</h6>
+                <h6 class="card-subtitle mb-2 text-muted">@item.Severity </h6>
+                <h6 class="card-subtitle mb-2 text-muted">@item.IsClosed</h6>
+                <h6 class="card-subtitle mb-2 ">@item.Department?.Name</h6>
+                @foreach(var d in @item.Developers){
+                    <h6 class="card-subtitle mb-2 ">@d.FirstName</h6>
+                }
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+            </div>
+        </div>
+    }
+</div>
+
+

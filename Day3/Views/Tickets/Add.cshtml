@@ -1,0 +1,36 @@
+﻿@using Day3.Models.Domain;
+@using Day3.Models.View;
+@model AddTicketVM;
+
+@{
+    var departmenrs = ViewData["departments"] as IEnumerable<SelectListItem> ?? new List<SelectListItem>();
+}
+<form asp-action="Add" method="post">
+    <div class="form-group">
+        <label asp-for="Description"></label>
+        <input class="form-control" asp-for="Description" />
+    </div>
+    <br />
+    <div class="form-group">
+        <label asp-for="IsClosed"></label>
+        <label asp-for="Severity"></label>
+        <select asp-for="Severity" asp-items="Html.GetEnumSelectList<Severity>()"></select>
+    </div>
+    <br />
+    <div class="form-group">
+        <input class="" asp-for="IsClosed" name="IsClosed" value="" />
+    </div>
+    <br />
+    <div class="form-group">
+        <label asp-for="DepartmentId"></label>
+        <select asp-for="DepartmentId" asp-items="departmenrs"></select>
+    </div>
+    <br />
+    <div class="form-group">
+        <label asp-for="DevelopersIds"></label>
+        <select asp-for="DevelopersIds" asp-items=" ViewBag.developersListItems"></select>
+    </div>
+    <br />
+    <button class="btn btn-secondary"> Submit </button>
+
+</form>
