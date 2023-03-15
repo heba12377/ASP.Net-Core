@@ -1,0 +1,20 @@
+﻿@using Day4.BL.ViewModels;
+@model  TicketReadVM;
+
+<a asp-action="Add">Add a new item</a>
+
+<div class="container">
+  
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">@Model.Id</h5>
+                <h6 class="card-subtitle mb-2 ">@Model.Title</h6>
+                <h6 class="card-subtitle mb-2 ">@Model.Description</h6>
+                <h6 class="card-subtitle mb-2 ">@Model.Severity</h6>
+                <a asp-action="Delete" asp-route-id="@Model.Id">Delete</a>
+                <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
+            <a asp-action="Index">List</a>
+            </div>
+        </div>
+
+</div>

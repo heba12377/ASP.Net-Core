@@ -1,0 +1,27 @@
+﻿@using Day4.BL.ViewModels;
+@using Day4.DAL.Models;
+@model TicketAddVM ;
+
+
+<form asp-action="Add" method="post">
+    <div class="form-group">
+        <label asp-for="Title"></label>
+        <input class="form-control" asp-for="Title" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Description"></label>
+        <input class="form-control" asp-for="Description" />
+    </div>
+    <br />
+    <div class="form-group">
+        <label asp-for="Severity"></label>
+        <select asp-for="Severity" asp-items="Html.GetEnumSelectList<Severity>()"></select>
+    </div>
+    <br />
+ 
+    <br />
+   
+
+    <button class="btn btn-secondary"> Submit </button>
+
+</form>
