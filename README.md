@@ -3,7 +3,7 @@ MVC Lab
 
 
 ## Requirements
-### Day1 Requirements : 
+#### Day1 Requirements : 
 
 Given a list of Cars, you will need to implement 2 pages:
 
@@ -25,4 +25,29 @@ Second Page:
 
 1.	Details Page
 2.	Contains the details of the element and message to tell whether the user came from a list or a table.
+
+
+
+
+#### Day2 Requirements : 
+
+Having a ticket entity which has the following properties:
+-	CreatedDate
+-	IsClosed
+-	Severity (enum)
+-	Description
+
+Severity is an enum that has three values (low, medium and high).
+
+Developer is class that has the following properties:
+-	Id
+-	FirstName
+-	LastName
+
+1.	Create a form to add a ticket
+
+     a.	Create a view model for the add from
+2.	Add the entity to a local static list.
+3.	Display the list in another action.
+
 
