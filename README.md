@@ -7,10 +7,11 @@ MVC Lab
 Day1 Requirements : 
 
 Given a list of Cars, you will need to implement 2 pages:
+
 First Page:
 1.	Contains two different ways to list the cars
-    a.	Using a table.
-    b.	Using a list.
+       a.	Using a table.
+       b.	Using a list.
 2.	Each car entity should have (Manufacturer, Model, Image, HtmlDescription, FirstUseDate)
 3.	Display the name of the cars as ({Model} From {Manufacturer}).
 4.	Display the usage duration (Seek for help for how to deal with DateTime).
